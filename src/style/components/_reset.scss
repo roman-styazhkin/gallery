@@ -1,0 +1,23 @@
+.reset {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    top: 0;
+    background-color: #B2B2B2;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}

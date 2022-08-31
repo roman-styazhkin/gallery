@@ -1,0 +1,22 @@
+.filter {
+  margin-bottom: 40px;
+
+  &__panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @include _575 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include _420 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__search {
+    padding: 15px;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,81 @@
+@import "../media";
+
+.gallery {
+  margin-bottom: 40px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @include _1024 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include _768 {
+      gap: 10px;
+    }
+
+    @include _575 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    margin: 5px 15px 7px;
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__box {
+    padding: 0 20px 30px;
+    transition: max-height 0.3s linear, padding 0.3s linear;
+    overflow: hidden;
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    max-height: 30px;
+    transition: max-height 0.3s linear, padding 0.3s linear;
+
+    &:hover {
+      max-height: 152px;
+      transition: max-height 0.3s linear, padding 0.3s linear;
+
+      @include _768 {
+        max-height: 275px;
+        transition: max-height 0.7s linear, padding 0.3s linear;
+      }
+    }
+  }
+
+  &__img {
+    height: 275px;
+  }
+
+  &__info-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &__caption {
+    font-weight: 500;
+    margin-right: 5px;
+  }
+}
