@@ -1,1 +1,1 @@
-http://roman-styazhkin.github.io/react-gallery
+http://roman-styazhkin.github.io/gallery
