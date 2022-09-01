@@ -1,3 +1,4 @@
+import React from "react";
 import { Container, GalleryItem, Skeleton } from "./";
 
 const Gallery = ({ items, loading }) => {

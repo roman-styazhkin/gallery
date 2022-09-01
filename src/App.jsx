@@ -18,7 +18,7 @@ const App = () => {
   const [images, setImages] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [showGif, setShowGif] = React.useState(true);
-  const dependencies = [authorId, locationId, q, created_gte, created_lte, activePage];
+  const dependencies = [authorId, locationId, q, created_lte, created_gte, activePage];
 
   const onGetImages = (response) => {
     setLoading(true);
