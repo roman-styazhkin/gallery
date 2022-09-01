@@ -1,7 +1,7 @@
 import axios from "axios";
 
 class Api {
-  _baseUrl = "http://localhost:3001";
+  _baseUrl = "https://test-front.framework.team";
 
   onGetResponse = async (url, params) => {
     const res = await axios.get(url, { params: params });
@@ -9,7 +9,7 @@ class Api {
   };
 
   getImages = async (params) => {
-    const res = await this.onGetResponse(this._baseUrl + "/images", params);
+    const res = await this.onGetResponse(this._baseUrl + "/paintings", params);
     return res;
   };
 

@@ -22,6 +22,16 @@ const Select = ({ children, selectItem, category }) => {
     document.addEventListener("click", onClickOutside);
   }, []);
 
+  const fixText = (value) => {
+    if (!value) return;
+
+    if (value.length > 15) {
+      return value.slice(0, 15) + "...";
+    }
+
+    return value;
+  };
+
   const onSelectCategory = (currentItem, activeSelect) => {
     selectItem(category, currentItem);
     setVisiblePopup(false);
@@ -37,7 +47,7 @@ const Select = ({ children, selectItem, category }) => {
     <div ref={selectRef} className="filter__category select" style={style}>
       {activeValue && <ResetFilter onResetCategory={onResetCategory} />}
       <div className="select__value" onClick={onToggleCategory}>
-        {activeValue || category}
+        {fixText(activeValue) || category}
       </div>
       {visiblePopup &&
         React.Children.map(children, (child) => React.cloneElement(child, { onSelectCategory }))}
