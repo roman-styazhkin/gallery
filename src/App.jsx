@@ -7,7 +7,7 @@ import Api from "./services/Api";
 import Utils from "./services/Utils";
 
 const App = () => {
-  const IMAGES_PER_PAGE = 9;
+  const IMAGES_PER_PAGE = 6;
   const { getImages } = new Api();
   const { debounce } = new Utils();
   const { authorId, locationId, q, created_lte, created_gte } = useSelector(

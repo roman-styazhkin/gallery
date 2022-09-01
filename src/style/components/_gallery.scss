@@ -32,6 +32,7 @@
   &__item {
     position: relative;
     overflow: hidden;
+    height: 275px;
   }
 
   &__box {
@@ -59,10 +60,6 @@
         transition: max-height 0.7s linear, padding 0.3s linear;
       }
     }
-  }
-
-  &__img {
-    height: 275px;
   }
 
   &__info-item {

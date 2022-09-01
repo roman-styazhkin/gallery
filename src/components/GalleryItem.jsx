@@ -21,14 +21,8 @@ const GalleryItem = ({ imageUrl, created, authorId, locationId, name }) => {
 
   return (
     <li className="gallery__item">
-      <img
-        src={src}
-        className="gallery__img"
-        alt="test"
-        width="360"
-        height="275"
-        onError={onErrImgSrc}
-      />
+      <img src={src} className="gallery__img" alt="test" onError={onErrImgSrc} />
+
       <div className="gallery__info">
         <h3 className="gallery__name">{name}</h3>
         <div className="gallery__box">
