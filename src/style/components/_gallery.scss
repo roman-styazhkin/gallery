@@ -5,8 +5,8 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 
     @include _1024 {
       grid-template-columns: repeat(2, 1fr);
@@ -32,7 +32,18 @@
   &__item {
     position: relative;
     overflow: hidden;
-    height: 275px;
+    height: 475px;
+
+    &:hover {
+      .gallery__info {
+        max-height: 152px;
+        transition: max-height 0.3s linear, padding 0.3s linear;
+      }
+    }
+
+    @include _768 {
+      height: 275px;
+    }
   }
 
   &__box {
@@ -52,9 +63,6 @@
     transition: max-height 0.3s linear, padding 0.3s linear;
 
     &:hover {
-      max-height: 152px;
-      transition: max-height 0.3s linear, padding 0.3s linear;
-
       @include _768 {
         max-height: 275px;
         transition: max-height 0.7s linear, padding 0.3s linear;
