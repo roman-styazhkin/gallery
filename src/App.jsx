@@ -41,10 +41,10 @@ const App = () => {
   }, dependencies);
 
   React.useEffect(() => {
-    setTimeout(() => setShowGif(false), 4000);
+    setTimeout(() => setShowGif(false), 2500);
   }, []);
 
-  const animation = showGif ? null : null;
+  const animation = showGif ? <Animation /> : null;
 
   return (
     <div className="App">
