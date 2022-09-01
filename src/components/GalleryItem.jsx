@@ -17,11 +17,9 @@ const GalleryItem = ({ imageUrl, created, authorId, locationId, name }) => {
     getLocationName(locationId).then(({ location }) => setLocationName(location));
   }, []);
 
-  const src = "https://test-front.framework.team/" + imageUrl;
-
   return (
     <li className="gallery__item">
-      <img src={src} className="gallery__img" alt="test" onError={onErrImgSrc} />
+      <img src={imageUrl} className="gallery__img" alt="test" onError={onErrImgSrc} />
 
       <div className="gallery__info">
         <h3 className="gallery__name">{name}</h3>
@@ -39,6 +37,10 @@ const GalleryItem = ({ imageUrl, created, authorId, locationId, name }) => {
       </div>
     </li>
   );
+};
+
+GalleryItem.defaultProps = {
+  imageUrl: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg",
 };
 
 export default GalleryItem;

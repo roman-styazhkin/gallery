@@ -17,7 +17,7 @@ const App = () => {
   const activePage = useSelector(({ pagination }) => pagination.activePage);
   const [images, setImages] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
-  const [showGif, setShowGif] = React.useState(true);
+  const [showAnim, setShowAnim] = React.useState(true);
   const dependencies = [authorId, locationId, q, created_lte, created_gte, activePage];
 
   const onGetImages = (response) => {
@@ -25,6 +25,7 @@ const App = () => {
     setImages(response.data);
     setTotalImages(response.totalCount);
     debounce(setLoading)(false);
+    window.scrollTo(0, 0);
     return response;
   };
 
@@ -41,10 +42,10 @@ const App = () => {
   }, dependencies);
 
   React.useEffect(() => {
-    setTimeout(() => setShowGif(false), 2500);
+    setTimeout(() => setShowAnim(false), 2500);
   }, []);
 
-  const animation = showGif ? <Animation /> : null;
+  const animation = showAnim ? null : null;
 
   return (
     <div className="App">
