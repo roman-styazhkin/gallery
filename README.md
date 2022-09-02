@@ -2,7 +2,7 @@
 
 ## Стэк: React, Redux, js
 
-http://roman-styazhkin.github.io/gallery
+Ссылка на проект http://roman-styazhkin.github.io/gallery
 
 # Краткое описание:
 1. Работа с реальным api
