@@ -7,7 +7,7 @@ import Api from "./services/Api";
 import Utils from "./services/Utils";
 
 const App = () => {
-  const IMAGES_PER_PAGE = 8;
+  const perPage = 8;
   const { getImages } = new Api();
   const { debounce } = new Utils();
   const { authorId, locationId, q, created_lte, created_gte } = useSelector(
@@ -18,7 +18,7 @@ const App = () => {
   const [images, setImages] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [showAnim, setShowAnim] = React.useState(true);
-  const dependencies = [authorId, locationId, q, created_lte, created_gte, activePage];
+  const dependencies = [authorId, locationId, q, created_lte, created_gte, activePage, perPage];
 
   const onGetImages = (response) => {
     setLoading(true);
@@ -32,7 +32,7 @@ const App = () => {
   React.useEffect(() => {
     getImages({
       _page: activePage + 1,
-      _limit: IMAGES_PER_PAGE,
+      _limit: perPage,
       authorId,
       locationId,
       q,
@@ -54,7 +54,7 @@ const App = () => {
           <Header />
           <Filter />
           <Gallery items={images} loading={loading} />
-          <Footer totalImages={totalImages} activePage={activePage} perPage={IMAGES_PER_PAGE} />
+          <Footer totalImages={totalImages} activePage={activePage} perPage={perPage} />
         </>
       )}
     </div>

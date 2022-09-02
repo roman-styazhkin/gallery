@@ -1,5 +1,6 @@
 import React from "react";
 import Api from "../services/Api";
+import { Skeleton } from "./";
 
 const GalleryItem = ({ imageUrl, created, authorId, locationId, name }) => {
   const onErrImgSrc = ({ currentTarget }) => {

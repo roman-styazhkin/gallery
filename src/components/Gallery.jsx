@@ -7,7 +7,7 @@ const Gallery = ({ items, loading }) => {
       <Container>
         <ul className="gallery__list">
           {loading
-            ? Array(6)
+            ? Array(8)
                 .fill()
                 .map((_, i) => <Skeleton key={i} />)
             : items.map((item) => (
