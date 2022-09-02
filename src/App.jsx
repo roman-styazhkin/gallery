@@ -45,7 +45,7 @@ const App = () => {
     setTimeout(() => setShowAnim(false), 2500);
   }, []);
 
-  const animation = showAnim ? null : null;
+  const animation = showAnim ? <Animation /> : null;
 
   return (
     <div className="App">
